@@ -9,7 +9,7 @@ class UsersController extends Controller
     public function index(){
         $users = [
             '0' => [
-                'first_name' => 'Renato',
+                 'first_name' => 'Renato',
                 'last_name' => 'Hysa',
                 'location' => 'Albania'   
             ],
@@ -20,7 +20,11 @@ class UsersController extends Controller
             ],
               
         ];
-        return $users;
+        return view('admin.users.index', compact('users'));
         
+    }
+
+    public function create(){
+        return view('admin.users.create');
     }
 }
