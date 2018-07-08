@@ -41,6 +41,6 @@ class User extends Authenticatable
     }
 
     public function getEmailAttribute($value){
-        return strtok($value, '@');
+        return strtok($value, '@'); 
     }
 }
