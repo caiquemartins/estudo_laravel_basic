@@ -16,4 +16,14 @@ class PagesController extends Controller
         else
             return 'No view avaiable';    
     }
+
+    public function profile(){
+        return view('pages.profile');
+    }
+
+    public function settings(){
+        return view('pages.settings');
+    }
+
+    
 }
