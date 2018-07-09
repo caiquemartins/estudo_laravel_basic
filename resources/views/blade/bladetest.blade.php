@@ -6,8 +6,27 @@ Blade
 
 @section('body')
 <div class="jumbotron">
-        <h1>Jumbotron heading</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <h1>
+          @if($gender == 'Male')
+            Male
+          @elseif($gender == 'Female')
+            Female
+          @else
+            unknown
+          @endif
+
+        </h1>
+        <p class="lead">
+          @unless(empty($text))
+            {{$text}}
+          @endunless
+
+          @if(!empty($text))
+            {{$text}}
+          @endunless
+        </p>
+        <p>{{ isset($variable) ? $variable : 'Nao existe'}}</p>
+        <p>{{ $variable or 'Nao existe pra caralho'}}</p>
         <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
       </div>
 
