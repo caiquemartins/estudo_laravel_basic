@@ -13,6 +13,8 @@
 
 Route::get('/', 'PagesController@index');
 
+Route::get('blade', 'PagesController@blade');
+
 Route::get('profile', 'PagesController@profile');
 
 Route::get('settings', 'PagesController@settings');
