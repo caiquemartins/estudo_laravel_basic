@@ -8,7 +8,8 @@ use App\User;
 class UsersController extends Controller
 {
     public function index(){
-        $users = User::all();
+        $users = User::paginate(10);
+        // $users = User::SimplePaginate(10);               Sem números
         return view('admin.users.index', compact('users'));
         
     }
