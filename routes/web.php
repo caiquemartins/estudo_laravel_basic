@@ -15,11 +15,15 @@ Route::get('/', 'PagesController@index');
 
 Route::get('blade', 'PagesController@blade');
 
-Route::get('profile', 'PagesController@profile')->middleware('authenticated');
+Route::group(['middleware' => ['authenticated']], function () {
+    Route::get('profile', 'PagesController@profile');
 
-Route::get('settings', 'PagesController@settings');
+    Route::get('settings', 'PagesController@settings');
 
-Route::get('users', 'UsersController@index')->middleware('authenticated');
+    Route::get('users', 'UsersController@index');
+});
+
+
 
 Route::get('users/create', 'UsersController@create');
 
