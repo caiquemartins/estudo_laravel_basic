@@ -15,13 +15,13 @@ Route::get('/', 'PagesController@index');
 
 Route::get('blade', 'PagesController@blade');
 
-Route::get('profile', 'PagesController@profile');
+Route::get('profile', 'PagesController@profile')->middleware('authenticated');
 
 Route::get('settings', 'PagesController@settings');
 
-Route::get('users', ['uses' => 'UsersController@index']);
+Route::get('users', 'UsersController@index')->middleware('authenticated');
 
-Route::get('users/create', ['uses' => 'UsersController@create']);
+Route::get('users/create', 'UsersController@create');
 
 Route::post('users', ['uses' => 'UsersController@store']);
 
