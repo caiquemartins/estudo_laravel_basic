@@ -8,6 +8,10 @@
                 <div class="card-header">Profile</div>
 
                 <div class="card-body">
+                    <p>
+                        Sua idade é @age([1994,4,7])
+                    </p>
+                    <p>@sayHello('Renato')</p>
                     <p>{{$married}}</p>
                     <p>{{$test}}</p>
                     <p>{{$age}}</p>
